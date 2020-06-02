@@ -16,7 +16,11 @@ Usage:
 
 Errors:
   Does not support and cannot test multiline
+  
   Does not support ;
+  
   Doesn't seem to support this commandi: echo '$USER'
+  
   UnicodeDecodeError: Delete the test/test/get_next_line.h.gch
+  
   ./a.out: Exec format error -> make re or change computer
