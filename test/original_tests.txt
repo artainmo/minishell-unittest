@@ -1,0 +1,60 @@
+echoq coucou > oui > echo text > fichier
+echo coucou > oui > echo text > fichier
+echo coucou > oui > echoq text > fichier
+cat main.c > echo main2.c main3.c > fichier
+cat main.c > echo main2.c > fichier main3.c
+pwd > t > t
+echo coucou >> oui
+echo coucou >> oui >> echo text >> fichier
+pwd >> pwd >> f
+echo coucou >> pwd >> f
+echo coucou >> cat main.c >> f
+cat main.c >> echo coucou >> f
+cat main.c >> pwd main2.c >> f
+cat main.c >> cat main.c >> f
+./a.out.out 0 < main.c < main2.c
+./a.out 0 < dwdw < main2.c
+wwdd < text.txt < main2.c
+./a.out2 | echo no < n | echo yes < y | cat | ./a.out
+./a.out2 | echo non < no | echo oui < yes | cat main.c
+./a.out2 | echo non < no | echo oui < yes
+./a.out2 | echo non > no | echo oui > yes | cat | ./a.out
+./a.out2 | echo non > no | echo oui > yes
+./a.out2 | echo non > no | echo oui > yes | pwd
+./a.out2 | echo non < no | echo oui < yes | cat
+./a.out2 | cat | cat < oui | cat
+echo coucou | echo lol | cat < yes | echo mdr
+pwd | echo no > no | echo ouo < yes | pwd
+base64 /dev/urandom | head -c 1000
+cat main.c | ./a.out
+./a.out | pwd
+pwd | pwd | cat main.c | ./a.out
+pwd | pwd | ./a.out | cat main.c
+pwd | pwd | ./a.out | cat
+./a.out | dwdw | pwd | ./a.out
+./a.out | grep c >./a.out | grep c > lol lol
+echo lol |exit
+./a.out < main.c > s
+ede < main.c > s > l| pwd
+./a.out > t.txt < main.c
+ddw > t.txt < main.c
+./a.out > t.txt > t < main.c
+./a.out > t.txt < main.c < main2.c
+./a.out < main.c > t > t.txt
+./a.out < main.c < main2.c > t
+./a.out < main.c < main2.c >> t
+./a.out >> t < main.c < main2.c
+./a.out > t.txt > t < main.c < main2.c
+./a.out < main.c > s > l| pwd
+./a.out < main.c > t | pwd | cat
+./a.out > t.txt < main.c | ./a.out
+echo ">"
+echo ">" > text
+echo ">" hello > text
+echo "> hello>" > text
+echo "\$USER"
+echo echo '\;'
+echo echo "\;"
+echo ';'
+echo $USER
+echo "$USER"

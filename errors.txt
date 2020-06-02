@@ -1,0 +1,168 @@
+
+****************************************
+command in NOT emptydir:
+echo lol |exit
+****************************************
+==========output==========
+YOU:
+
+exit
+6
+
+BASH:
+
+1
+
+****************************************
+command in NOT emptydir:
+ede < main.c > s > l| pwd -> We create s and l fils while bash doesn't
+****************************************
+==========output==========
+YOU:
+error : multiline commands not supported.
+
+43
+
+BASH:
+-c: line 0: unexpected EOF while looking for matching `''
+-c: line 1: syntax error: unexpected end of file
+
+108
+==========files==========
+YOU:
+['s', 'l']
+BASH:
+None
+==========cat_files==========
+YOU:
+[][]
+BASH:
+
+
+****************************************
+command in emptydir:
+ede < main.c > s > l| pwd -> We create s and l fils while bash doesn't
+****************************************
+==========output==========
+YOU:
+error : multiline commands not supported.
+main.c: No such file or directory
+
+77
+
+BASH:
+-c: line 0: unexpected EOF while looking for matching `''
+-c: line 1: syntax error: unexpected end of file
+
+108
+
+****************************************
+command in NOT emptydir:
+echo ">" > text
+****************************************
+==========output==========
+YOU:
+
+> > text
+10
+
+BASH:
+
+1
+==========files==========
+YOU:
+None
+BASH:
+['text']
+==========cat_files==========
+YOU:
+
+BASH:
+['>\n']
+
+****************************************
+command in NOT emptydir:
+echo ">" hello > text
+****************************************
+==========output==========
+YOU:
+
+> hello > text
+16
+
+BASH:
+
+1
+==========files==========
+YOU:
+None
+BASH:
+['text']
+==========cat_files==========
+YOU:
+
+BASH:
+['> hello\n']
+
+****************************************
+command in NOT emptydir:
+echo "> hello>" > text
+****************************************
+==========output==========
+YOU:
+
+> hello> > text
+
+18
+
+BASH:
+
+1
+==========files==========
+YOU:
+None
+BASH:
+['text']
+==========cat_files==========
+YOU:
+
+BASH:
+['> hello>\n']
+
+****************************************
+command in NOT emptydir:
+echo '$USER' -> Unittest bugs but correct
+****************************************
+==========output==========
+YOU:
+
+1
+
+BASH:
+
+1
+==========files==========
+YOU:
+['Unittest']
+BASH:
+['Unittest']
+==========cat_files==========
+YOU:
+['arthurtainmont -bugs but correct\n']
+BASH:
+['$USER - bugs but correct\n']
+
+****************************************
+command in NOT emptydir:
+echo \\$?
+****************************************
+==========output==========
+YOU:
+
+$?
+4
+
+BASH:
+
+\0
+4
