@@ -389,8 +389,8 @@ yes: No such file or directory
 
 
 BASH:
-./a.out2: No such file or directory
 no: No such file or directory
+./a.out2: No such file or directory
 yes: No such file or directory
 cat: command not found
 
@@ -422,8 +422,8 @@ yes: No such file or directory
 
 
 BASH:
-./a.out2: No such file or directory
 no: No such file or directory
+./a.out2: No such file or directory
 yes: No such file or directory
 
 
@@ -490,11 +490,11 @@ command in NOT emptydir:
 ==========output==========
 YOU:
 
-/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/test/test
+/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/minishell_unittest/test/test
 
 BASH:
 
-/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/test/test
+/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/minishell_unittest/test/test
 
 ****************************************
 command in emptydir:
@@ -504,12 +504,12 @@ command in emptydir:
 YOU:
 ./a.out2: No such file or directory
 
-/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/test/empty
+/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/minishell_unittest/test/empty
 
 BASH:
 ./a.out2: No such file or directory
 
-/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/test/empty
+/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/minishell_unittest/test/empty
 
 ****************************************
 command in NOT emptydir:
@@ -571,9 +571,9 @@ oui: No such file or directory
 
 
 BASH:
-./a.out2: No such file or directory
 cat: command not found
 oui: No such file or directory
+./a.out2: No such file or directory
 cat: command not found
 
 
@@ -600,12 +600,12 @@ pwd | echo no > no | echo ouo < yes | pwd
 YOU:
 yes: No such file or directory
 
-/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/test/test
+/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/minishell_unittest/test/test
 
 BASH:
 yes: No such file or directory
 
-/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/test/test
+/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/minishell_unittest/test/test
 
 ****************************************
 command in NOT emptydir:
@@ -657,12 +657,12 @@ date | pwd
 ==========output==========
 YOU:
 
-/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/test/test
+/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/minishell_unittest/test/test
 
 BASH:
 date: command not found
 
-/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/test/test
+/Users/arthurtainmont/Documents/s19/minishell/minishell_unittest/minishell_unittest/test/test
 
 ****************************************
 command in NOT emptydir:
@@ -760,8 +760,8 @@ YOU:
 
 
 BASH:
-./a.out1: No such file or directory
 dwdw: command not found
+./a.out1: No such file or directory
 
 
 
