@@ -27,4 +27,4 @@ programs:
 	mv a.out test/test/a.out
 	rm test/test/get_next_line.h.gch
 	gcc test/test/main2.c -o test/test/a.out2
-	pip install colorterm
+	pip3 install colorterm

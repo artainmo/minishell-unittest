@@ -4,7 +4,8 @@ import subprocess
 from utils.test_difference import *
 from utils.show_result import *
 
-minishell_pwd = "/Users/arthurtainmont/Documents/s19/minishell/minishell/minishell"
+minishell_pwd = "/Users/arthurtainmont/Documents/s19/minis/minishell/minishell" 
+#minishell path towards your minishell executable
 
 def parse_minishell(output):
     i = 0
