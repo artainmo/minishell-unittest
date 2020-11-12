@@ -1,18 +1,659 @@
 
 ****************************************
 command in NOT emptydir:
+echoq coucou > oui > echo text > fichier
+****************************************
+==========output==========
+YOU:
+echoq: command not found
+
+ ~ [1;32mminishell > [051
+
+BASH:
+echoq: command not found
+
+26
+==========files==========
+YOU:
+['echo', 'oui', 'fichier']
+BASH:
+['echo', 'oui', 'fichier']
+==========cat_files==========
+YOU:
+['❌ ~ \x1b[1;31mminishell > \x1b[0m\n'][][]
+BASH:
+[][][]
+
+****************************************
+command in NOT emptydir:
+echo coucou > oui > echo text > fichier
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [026
+
+BASH:
+
+1
+==========files==========
+YOU:
+['echo', 'oui', 'fichier']
+BASH:
+['echo', 'oui', 'fichier']
+==========cat_files==========
+YOU:
+['🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m\n'][]['coucou text\n']
+BASH:
+[][]['coucou text\n']
+
+****************************************
+command in NOT emptydir:
+echo coucou > oui > echoq text > fichier
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [026
+
+BASH:
+
+1
+==========files==========
+YOU:
+['oui', 'echoq', 'fichier']
+BASH:
+['oui', 'echoq', 'fichier']
+==========cat_files==========
+YOU:
+[]['🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m\n']['coucou text\n']
+BASH:
+[][]['coucou text\n']
+
+****************************************
+command in NOT emptydir:
+cat main.c > echo main2.c main3.c > fichier
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+ ~ [1;32mminishell > [049
+
+BASH:
+cat: command not found
+
+24
+==========files==========
+YOU:
+['echo', 'fichier']
+BASH:
+['echo', 'fichier']
+==========cat_files==========
+YOU:
+['❌ ~ \x1b[1;31mminishell > \x1b[0m\n'][]
+BASH:
+[][]
+
+****************************************
+command in emptydir:
+cat main.c > echo main2.c main3.c > fichier
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+ ~ [1;32mminishell > [049
+
+BASH:
+cat: command not found
+
+24
+==========files==========
+YOU:
+['echo', 'fichier']
+BASH:
+['echo', 'fichier']
+==========cat_files==========
+YOU:
+['❌ ~ \x1b[1;31mminishell > \x1b[0m\n'][]
+BASH:
+[][]
+
+****************************************
+command in NOT emptydir:
+cat main.c > echo main2.c > fichier main3.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+ ~ [1;32mminishell > [049
+
+BASH:
+cat: command not found
+
+24
+==========files==========
+YOU:
+['echo', 'fichier']
+BASH:
+['echo', 'fichier']
+==========cat_files==========
+YOU:
+['❌ ~ \x1b[1;31mminishell > \x1b[0m\n'][]
+BASH:
+[][]
+
+****************************************
+command in emptydir:
+cat main.c > echo main2.c > fichier main3.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+ ~ [1;32mminishell > [049
+
+BASH:
+cat: command not found
+
+24
+==========files==========
+YOU:
+['echo', 'fichier']
+BASH:
+['echo', 'fichier']
+==========cat_files==========
+YOU:
+['❌ ~ \x1b[1;31mminishell > \x1b[0m\n'][]
+BASH:
+[][]
+
+****************************************
+command in NOT emptydir:
+pwd > t > t
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [026
+
+BASH:
+
+1
+==========files==========
+YOU:
+['t']
+BASH:
+['t']
+==========cat_files==========
+YOU:
+['🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m\n', 'ell_unittest/test/test\n']
+BASH:
+['/Users/arthurtainmont/goinfre/minishell_unittest/test/test\n']
+
+****************************************
+command in emptydir:
+pwd > t > t
+****************************************
+==========output==========
+YOU:
+t: Is a directory
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m72
+
+BASH:
+t: Is a directory
+
+19
+
+****************************************
+command in NOT emptydir:
+echo coucou >> oui
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [0m27
+
+BASH:
+
+1
+
+****************************************
+command in NOT emptydir:
+echo coucou >> oui >> echo text >> fichier
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [026
+
+BASH:
+
+1
+==========files==========
+YOU:
+['echo', 'oui', 'fichier']
+BASH:
+['echo', 'oui', 'fichier']
+==========cat_files==========
+YOU:
+['🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m\n'][]['coucou text\n']
+BASH:
+[][]['coucou text\n']
+
+****************************************
+command in NOT emptydir:
+pwd >> pwd >> f
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [026
+
+BASH:
+
+1
+==========files==========
+YOU:
+['pwd', 'f']
+BASH:
+['pwd', 'f']
+==========cat_files==========
+YOU:
+['🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m\n']['/Users/arthurtainmont/goinfre/minishell_unittest/test/test\n']
+BASH:
+[]['/Users/arthurtainmont/goinfre/minishell_unittest/test/test\n']
+
+****************************************
+command in NOT emptydir:
+echo coucou >> pwd >> f
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [026
+
+BASH:
+
+1
+==========files==========
+YOU:
+['pwd', 'f']
+BASH:
+['pwd', 'f']
+==========cat_files==========
+YOU:
+['🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m\n']['coucou\n']
+BASH:
+[]['coucou\n']
+
+****************************************
+command in NOT emptydir:
+echo coucou >> cat main.c >> f
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [026
+
+BASH:
+
+1
+==========files==========
+YOU:
+['cat', 'f']
+BASH:
+['cat', 'f']
+==========cat_files==========
+YOU:
+['🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m\n']['coucou main.c\n']
+BASH:
+[]['coucou main.c\n']
+
+****************************************
+command in emptydir:
+echo coucou >> cat main.c >> f
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [026
+
+BASH:
+
+1
+==========files==========
+YOU:
+['cat', 'f']
+BASH:
+['cat', 'f']
+==========cat_files==========
+YOU:
+['🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m\n']['coucou main.c\n']
+BASH:
+[]['coucou main.c\n']
+
+****************************************
+command in NOT emptydir:
+cat main.c >> echo coucou >> f
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+ ~ [1;32mminishell > [049
+
+BASH:
+cat: command not found
+
+24
+==========files==========
+YOU:
+['echo', 'f']
+BASH:
+['echo', 'f']
+==========cat_files==========
+YOU:
+['❌ ~ \x1b[1;31mminishell > \x1b[0m\n'][]
+BASH:
+[][]
+
+****************************************
+command in emptydir:
+cat main.c >> echo coucou >> f
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+ ~ [1;32mminishell > [049
+
+BASH:
+cat: command not found
+
+24
+==========files==========
+YOU:
+['echo', 'f']
+BASH:
+['echo', 'f']
+==========cat_files==========
+YOU:
+['❌ ~ \x1b[1;31mminishell > \x1b[0m\n'][]
+BASH:
+[][]
+
+****************************************
+command in NOT emptydir:
+cat main.c >> pwd main2.c >> f
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+ ~ [1;32mminishell > [049
+
+BASH:
+cat: command not found
+
+24
+==========files==========
+YOU:
+['pwd', 'f']
+BASH:
+['pwd', 'f']
+==========cat_files==========
+YOU:
+['❌ ~ \x1b[1;31mminishell > \x1b[0m\n'][]
+BASH:
+[][]
+
+****************************************
+command in emptydir:
+cat main.c >> pwd main2.c >> f
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+ ~ [1;32mminishell > [049
+
+BASH:
+cat: command not found
+
+24
+==========files==========
+YOU:
+['pwd', 'f']
+BASH:
+['pwd', 'f']
+==========cat_files==========
+YOU:
+['❌ ~ \x1b[1;31mminishell > \x1b[0m\n'][]
+BASH:
+[][]
+
+****************************************
+command in NOT emptydir:
+cat main.c >> cat main.c >> f
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+ ~ [1;32mminishell > [049
+
+BASH:
+cat: command not found
+
+24
+==========files==========
+YOU:
+['cat', 'f']
+BASH:
+['cat', 'f']
+==========cat_files==========
+YOU:
+['❌ ~ \x1b[1;31mminishell > \x1b[0m\n'][]
+BASH:
+[][]
+
+****************************************
+command in emptydir:
+cat main.c >> cat main.c >> f
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+ ~ [1;32mminishell > [049
+
+BASH:
+cat: command not found
+
+24
+==========files==========
+YOU:
+['cat', 'f']
+BASH:
+['cat', 'f']
+==========cat_files==========
+YOU:
+['❌ ~ \x1b[1;31mminishell > \x1b[0m\n'][]
+BASH:
+[][]
+
+****************************************
+command in NOT emptydir:
+./a.out.out 0 < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+./a.out.out: No such file or directory
+#include: command not found
+int: command not found
+{: command not found
+char: command not found
+int: command not found
+int: command not found
+int: command not found
+fd: command not found
+fd1: command not found
+fd: command not found
+if: command not found
+{: command not found
+if: command not found
+cat.out: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+}: command not found
+if: command not found
+{: command not found
+while((ret: command not found
+{: command not found
+printf(%d | %s\n,: command not found
+free(line): command not found
+}: command not found
+printf(%d | %s\n,: command not found
+free(line): command not found
+}: command not found
+if: command not found
+{: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+}: command not found
+if: command not found
+system(leaks a.out): command not found
+close(fd): command not found
+close(fd1): command not found
+return: command not found
+}: command not found
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m❌ ~ [1;31mminishell > [0m❌ ~ [1;31mminishell > [0m❌ ~ [1;31mminishell > [0m1635
+
+BASH:
+./a.out.out: No such file or directory
+
+40
+==========files==========
+YOU:
+['0)']
+BASH:
+None
+==========cat_files==========
+YOU:
+[]
+BASH:
+
+
+****************************************
+command in emptydir:
+./a.out.out 0 < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+main.c: No such file or directory
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m88
+
+BASH:
+main.c: No such file or directory
+
+35
+
+****************************************
+command in NOT emptydir:
+cat 0 < dwdw < main2.c
+****************************************
+==========output==========
+YOU:
+dwdw: No such file or directory
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m86
+
+BASH:
+dwdw: No such file or directory
+
+33
+
+****************************************
+command in emptydir:
+cat 0 < dwdw < main2.c
+****************************************
+==========output==========
+YOU:
+dwdw: No such file or directory
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m86
+
+BASH:
+dwdw: No such file or directory
+
+33
+
+****************************************
+command in NOT emptydir:
+wwdd < text.txt < main2.c
+****************************************
+==========output==========
+YOU:
+text.txt: No such file or directory
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m90
+
+BASH:
+text.txt: No such file or directory
+
+37
+
+****************************************
+command in emptydir:
+wwdd < text.txt < main2.c
+****************************************
+==========output==========
+YOU:
+text.txt: No such file or directory
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m90
+
+BASH:
+text.txt: No such file or directory
+
+37
+
+****************************************
+command in NOT emptydir:
 ./a.out2 | echo no < n | echo yes < y | cat | ./a.out2
 ****************************************
 ==========output==========
 YOU:
 n: No such file or directory
 y: No such file or directory
-sleep: command not found
 cat: command not found
 
-
+ ~ [1;32mminishell > [0m
 ****This program has been executed successfully****
-160
+161
 
 BASH:
 n: No such file or directory
@@ -29,14 +670,13 @@ command in emptydir:
 ****************************************
 ==========output==========
 YOU:
+./a.out2: No such file or directory
 n: No such file or directory
 y: No such file or directory
-sleep: command not found
 cat: command not found
 ./a.out2: No such file or directory
-./a.out2: No such file or directory
 
-179
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m207
 
 BASH:
 ./a.out2: No such file or directory
@@ -55,10 +695,9 @@ command in NOT emptydir:
 YOU:
 no: No such file or directory
 yes: No such file or directory
-sleep: command not found
 cat: command not found
 
-110
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m138
 
 BASH:
 no: No such file or directory
@@ -73,13 +712,12 @@ command in emptydir:
 ****************************************
 ==========output==========
 YOU:
+./a.out2: No such file or directory
 no: No such file or directory
 yes: No such file or directory
-sleep: command not found
 cat: command not found
-./a.out2: No such file or directory
 
-146
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m174
 
 BASH:
 ./a.out2: No such file or directory
@@ -91,16 +729,51 @@ cat: command not found
 
 ****************************************
 command in NOT emptydir:
+./a.out2 | echo non < no | echo oui < yes
+****************************************
+==========output==========
+YOU:
+no: No such file or directory
+yes: No such file or directory
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m115
+
+BASH:
+no: No such file or directory
+yes: No such file or directory
+
+62
+
+****************************************
+command in emptydir:
+./a.out2 | echo non < no | echo oui < yes
+****************************************
+==========output==========
+YOU:
+./a.out2: No such file or directory
+no: No such file or directory
+yes: No such file or directory
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m151
+
+BASH:
+./a.out2: No such file or directory
+no: No such file or directory
+yes: No such file or directory
+
+98
+
+****************************************
+command in NOT emptydir:
 ./a.out2 | echo non > no | echo oui > yes | cat | ./a.out2
 ****************************************
 ==========output==========
 YOU:
-sleep: command not found
 cat: command not found
 
-
+ ~ [1;32mminishell > [0m
 ****This program has been executed successfully****
-102
+103
 
 BASH:
 cat: command not found
@@ -115,12 +788,11 @@ command in emptydir:
 ****************************************
 ==========output==========
 YOU:
-sleep: command not found
-./a.out2: minishell: cat: command not found
-or directory
-No such file or directory
+./a.out2: No such file or directory
+cat: command not found
+./a.out2: No such file or directory
 
-109
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m149
 
 BASH:
 ./a.out2: No such file or directory
@@ -131,14 +803,41 @@ cat: command not found
 
 ****************************************
 command in NOT emptydir:
+./a.out2 | echo non > no | echo oui > yes
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [0m27
+
+BASH:
+
+1
+
+****************************************
+command in emptydir:
+./a.out2 | echo non > no | echo oui > yes
+****************************************
+==========output==========
+YOU:
+./a.out2: No such file or directory
+
+ ~ [1;32mminishell > [0m63
+
+BASH:
+./a.out2: No such file or directory
+
+37
+
+****************************************
+command in NOT emptydir:
 ./a.out2 | echo non > no | echo oui > yes | pwd
 ****************************************
 ==========output==========
 YOU:
-sleep: command not found
 
-/Users/arthurtainmont/goinfre/minishell_unittest/test/test
-85
+ ~ [1;32mminishell > [0m/Users/arthurtainmont/goinfre/minishell_unittest/test/test
+86
 
 BASH:
 
@@ -151,11 +850,10 @@ command in emptydir:
 ****************************************
 ==========output==========
 YOU:
-sleep: command not found
 ./a.out2: No such file or directory
 
-/Users/arthurtainmont/goinfre/minishell_unittest/test/empty
-122
+ ~ [1;32mminishell > [0m/Users/arthurtainmont/goinfre/minishell_unittest/test/empty
+123
 
 BASH:
 ./a.out2: No such file or directory
@@ -171,10 +869,9 @@ command in NOT emptydir:
 YOU:
 no: No such file or directory
 yes: No such file or directory
-sleep: command not found
 cat: command not found
 
-110
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m138
 
 BASH:
 no: No such file or directory
@@ -189,13 +886,12 @@ command in emptydir:
 ****************************************
 ==========output==========
 YOU:
+./a.out2: No such file or directory
 no: No such file or directory
 yes: No such file or directory
-sleep: command not found
 cat: command not found
-./a.out2: No such file or directory
 
-146
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m174
 
 BASH:
 ./a.out2: No such file or directory
@@ -211,11 +907,11 @@ command in NOT emptydir:
 ****************************************
 ==========output==========
 YOU:
+cat: command not found
 oui: No such file or directory
-sleep: command not found
 cat: command not found
 
-80
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m131
 
 BASH:
 cat: command not found
@@ -230,12 +926,12 @@ command in emptydir:
 ****************************************
 ==========output==========
 YOU:
-oui: No such file or directory
-sleep: command not found
-cat: command not found
 ./a.out2: No such file or directory
+cat: command not found
+oui: No such file or directory
+cat: command not found
 
-116
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m167
 
 BASH:
 ./a.out2: No such file or directory
@@ -252,10 +948,9 @@ echo coucou | echo lol | cat < yes | echo mdr
 ==========output==========
 YOU:
 yes: No such file or directory
-sleep: command not found
 
-mdr
-61
+ ~ [1;32mminishell > [0mmdr
+62
 
 BASH:
 yes: No such file or directory
@@ -270,10 +965,9 @@ pwd | echo no > no | echo ouo < yes | pwd
 ==========output==========
 YOU:
 yes: No such file or directory
-sleep: command not found
 
-/Users/arthurtainmont/goinfre/minishell_unittest/test/test
-116
+ ~ [1;32mminishell > [0m/Users/arthurtainmont/goinfre/minishell_unittest/test/test
+117
 
 BASH:
 yes: No such file or directory
@@ -283,17 +977,243 @@ yes: No such file or directory
 
 ****************************************
 command in NOT emptydir:
+base64 /dev/urandom | head -c 1000
+****************************************
+==========output==========
+YOU:
+base64: command not found
+head: command not found
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m104
+
+BASH:
+base64: command not found
+head: command not found
+
+51
+
+****************************************
+command in NOT emptydir:
+cat main.c | ./a.out2
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+ ~ [1;32mminishell > [0m
+****This program has been executed successfully****
+103
+
+BASH:
+cat: command not found
+
+
+****This program has been executed successfully****
+77
+
+****************************************
+command in emptydir:
+cat main.c | ./a.out2
+****************************************
+==========output==========
+YOU:
+cat: command not found
+./a.out2: No such file or directory
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m113
+
+BASH:
+cat: command not found
+./a.out2: No such file or directory
+
+60
+
+****************************************
+command in NOT emptydir:
+date | pwd
+****************************************
+==========output==========
+YOU:
+date: command not found
+
+ ~ [1;32mminishell > [0m/Users/arthurtainmont/goinfre/minishell_unittest/test/test
+110
+
+BASH:
+date: command not found
+
+/Users/arthurtainmont/goinfre/minishell_unittest/test/test
+84
+
+****************************************
+command in NOT emptydir:
+pwd | pwd | cat main.c | ./a.out2
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+ ~ [1;32mminishell > [0m
+****This program has been executed successfully****
+103
+
+BASH:
+cat: command not found
+
+
+****This program has been executed successfully****
+77
+
+****************************************
+command in emptydir:
+pwd | pwd | cat main.c | ./a.out2
+****************************************
+==========output==========
+YOU:
+cat: command not found
+./a.out2: No such file or directory
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m113
+
+BASH:
+cat: command not found
+./a.out2: No such file or directory
+
+60
+
+****************************************
+command in NOT emptydir:
+pwd | pwd | cat | cat main.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+cat: command not found
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m100
+
+BASH:
+cat: command not found
+cat: command not found
+
+47
+
+****************************************
+command in emptydir:
+pwd | pwd | cat | cat main.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+cat: command not found
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m100
+
+BASH:
+cat: command not found
+cat: command not found
+
+47
+
+****************************************
+command in NOT emptydir:
+pwd | pwd | cat | cat
+****************************************
+==========output==========
+YOU:
+cat: command not found
+cat: command not found
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m100
+
+BASH:
+cat: command not found
+cat: command not found
+
+47
+
+****************************************
+command in NOT emptydir:
+./a.out1 | dwdw | pwd | echo
+****************************************
+==========output==========
+YOU:
+./a.out1: No such file or directory
+dwdw: command not found
+
+ ~ [1;32mminishell > [0m
+88
+
+BASH:
+./a.out1: No such file or directory
+dwdw: command not found
+
+
+62
+
+****************************************
+command in emptydir:
+./a.out1 | dwdw | pwd | echo
+****************************************
+==========output==========
+YOU:
+./a.out1: No such file or directory
+dwdw: command not found
+
+ ~ [1;32mminishell > [0m
+88
+
+BASH:
+./a.out1: No such file or directory
+dwdw: command not found
+
+
+62
+
+****************************************
+command in NOT emptydir:
+echo j | grep c >cat | grep c > lol lol
+****************************************
+==========output==========
+YOU:
+grep: command not found
+grep: command not found
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m102
+
+BASH:
+grep: command not found
+grep: command not found
+
+49
+
+****************************************
+command in NOT emptydir:
 echo lol |exit
 ****************************************
 ==========output==========
 YOU:
 
-exit
-6
+ ~ [1;32mminishell > [0m27
 
 BASH:
 
 1
+
+****************************************
+command in NOT emptydir:
+hexdump < main.c > s
+****************************************
+==========output==========
+YOU:
+hexdump: command not found
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m81
+
+BASH:
+hexdump: command not found
+
+28
 
 ****************************************
 command in emptydir:
@@ -301,24 +1221,12 @@ hexdump < main.c > s
 ****************************************
 ==========output==========
 YOU:
-main.c: No such file or directory
-
-35
+None0
 
 BASH:
 main.c: No such file or directory
 
 35
-==========files==========
-YOU:
-['s']
-BASH:
-None
-==========cat_files==========
-YOU:
-[]
-BASH:
-
 
 ****************************************
 command in NOT emptydir:
@@ -326,26 +1234,15 @@ ede < main.c > s > l| pwd -> We create s and l fils while bash doesn't
 ****************************************
 ==========output==========
 YOU:
-error : multiline commands not supported.
-ede: command not found
 
-66
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m
+minishell: unexpected EOF while looking for matching `''111
 
 BASH:
 -c: line 0: unexpected EOF while looking for matching `''
 -c: line 1: syntax error: unexpected end of file
 
 108
-==========files==========
-YOU:
-['s', 'l']
-BASH:
-None
-==========cat_files==========
-YOU:
-[][]
-BASH:
-
 
 ****************************************
 command in emptydir:
@@ -353,26 +1250,235 @@ ede < main.c > s > l| pwd -> We create s and l fils while bash doesn't
 ****************************************
 ==========output==========
 YOU:
-error : multiline commands not supported.
-main.c: No such file or directory
 
-77
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m
+minishell: unexpected EOF while looking for matching `''111
 
 BASH:
 -c: line 0: unexpected EOF while looking for matching `''
 -c: line 1: syntax error: unexpected end of file
 
 108
+
+****************************************
+command in NOT emptydir:
+cat > t.txt < main.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m77
+
+BASH:
+cat: command not found
+
+24
+
+****************************************
+command in emptydir:
+cat > t.txt < main.c
+****************************************
+==========output==========
+YOU:
+main.c: No such file or directory
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m88
+
+BASH:
+main.c: No such file or directory
+
+35
+
+****************************************
+command in NOT emptydir:
+ddw > t.txt < main.c
+****************************************
+==========output==========
+YOU:
+ddw: command not found
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m77
+
+BASH:
+ddw: command not found
+
+24
+
+****************************************
+command in emptydir:
+ddw > t.txt < main.c
+****************************************
+==========output==========
+YOU:
+main.c: No such file or directory
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m88
+
+BASH:
+main.c: No such file or directory
+
+35
+
+****************************************
+command in NOT emptydir:
+cat > t.txt > t < main.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+ ~ [1;32mminishell > [049
+
+BASH:
+cat: command not found
+
+24
 ==========files==========
 YOU:
-['s', 'l']
+['t', 't.txt']
 BASH:
-None
+['t', 't.txt']
+==========cat_files==========
+YOU:
+[]['❌ ~ \x1b[1;31mminishell > \x1b[0m\n']
+BASH:
+[][]
+
+****************************************
+command in emptydir:
+cat > t.txt > t < main.c
+****************************************
+==========output==========
+YOU:
+None0
+
+BASH:
+t: Is a directory
+
+19
+
+****************************************
+command in NOT emptydir:
+cat > t.txt < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+#include: command not found
+int: command not found
+{: command not found
+char: command not found
+int: command not found
+int: command not found
+int: command not found
+fd: command not found
+fd1: command not found
+fd: command not found
+if: command not found
+{: command not found
+if: command not found
+cat.out: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+}: command not found
+if: command not found
+{: command not found
+while((ret: command not found
+{: command not found
+printf(%d | %s\n,: command not found
+free(line): command not found
+}: command not found
+printf(%d | %s\n,: command not found
+free(line): command not found
+}: command not found
+if: command not found
+{: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+}: command not found
+if: command not found
+system(leaks a.out): command not found
+close(fd): command not found
+close(fd1): command not found
+return: command not found
+}: command not found
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m❌ ~ [1;31mminishell > [0m❌ ~ [1;31mminishell > [0m❌ ~ [1;31mminishell > [0m1619
+
+BASH:
+cat: command not found
+
+24
+==========files==========
+YOU:
+['0)', 't.txt']
+BASH:
+['t.txt']
 ==========cat_files==========
 YOU:
 [][]
 BASH:
+[]
 
+****************************************
+command in emptydir:
+cat > t.txt < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+main.c: No such file or directory
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m88
+
+BASH:
+main.c: No such file or directory
+
+35
+
+****************************************
+command in NOT emptydir:
+cat < main.c > t > t.txt -> Mac unnecessary error message; stdin:bad file descriptor
+****************************************
+==========output==========
+YOU:
+cat: command not found
+stdin:bad: command not found
+
+ ~ [1;32mminishell > [078
+
+BASH:
+cat: command not found
+stdin:bad: command not found
+
+53
+==========files==========
+YOU:
+['t', 't.txt', 'Mac']
+BASH:
+['t', 't.txt', 'Mac']
+==========cat_files==========
+YOU:
+[]['❌ ~ \x1b[1;31mminishell > \x1b[0m\n'][]
+BASH:
+[][][]
 
 ****************************************
 command in emptydir:
@@ -380,16 +1486,95 @@ cat < main.c > t > t.txt -> Mac unnecessary error message; stdin:bad file descri
 ****************************************
 ==========output==========
 YOU:
-t: Is a directory
-stdin:bad: command not found
-
-48
+None0
 
 BASH:
 main.c: No such file or directory
 stdin:bad: command not found
 
 64
+
+****************************************
+command in NOT emptydir:
+cat < main.c < main2.c > t -> Mac unnecessary error message; stdin:bad file descriptor
+****************************************
+==========output==========
+YOU:
+cat: command not found
+stdin:bad: command not found
+#include: command not found
+int: command not found
+{: command not found
+char: command not found
+int: command not found
+int: command not found
+int: command not found
+fd: command not found
+fd1: command not found
+fd: command not found
+if: command not found
+{: command not found
+if: command not found
+cat.out: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+}: command not found
+if: command not found
+{: command not found
+while((ret: command not found
+{: command not found
+printf(%d | %s\n,: command not found
+free(line): command not found
+}: command not found
+printf(%d | %s\n,: command not found
+free(line): command not found
+}: command not found
+if: command not found
+{: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+}: command not found
+if: command not found
+system(leaks a.out): command not found
+close(fd): command not found
+close(fd1): command not found
+return: command not found
+}: command not found
+
+ ~ [1;32mminishell > [01539
+
+BASH:
+cat: command not found
+stdin:bad: command not found
+
+53
+==========files==========
+YOU:
+['0)', 't', 'Mac']
+BASH:
+['t', 'Mac']
+==========cat_files==========
+YOU:
+[]['❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m\n', "minishell: syntax error near unexpected token `newline'\n", "minishell: syntax error near unexpected token `newline'\n"][]
+BASH:
+[][]
 
 ****************************************
 command in emptydir:
@@ -397,16 +1582,95 @@ cat < main.c < main2.c > t -> Mac unnecessary error message; stdin:bad file desc
 ****************************************
 ==========output==========
 YOU:
-t: Is a directory
-stdin:bad: command not found
-
-48
+None0
 
 BASH:
 main.c: No such file or directory
 stdin:bad: command not found
 
 64
+
+****************************************
+command in NOT emptydir:
+cat < main.c < main2.c >> t -> Mac unnecessary error message; stdin:bad file descriptor
+****************************************
+==========output==========
+YOU:
+cat: command not found
+stdin:bad: command not found
+#include: command not found
+int: command not found
+{: command not found
+char: command not found
+int: command not found
+int: command not found
+int: command not found
+fd: command not found
+fd1: command not found
+fd: command not found
+if: command not found
+{: command not found
+if: command not found
+cat.out: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+}: command not found
+if: command not found
+{: command not found
+while((ret: command not found
+{: command not found
+printf(%d | %s\n,: command not found
+free(line): command not found
+}: command not found
+printf(%d | %s\n,: command not found
+free(line): command not found
+}: command not found
+if: command not found
+{: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+}: command not found
+if: command not found
+system(leaks a.out): command not found
+close(fd): command not found
+close(fd1): command not found
+return: command not found
+}: command not found
+
+ ~ [1;32mminishell > [01539
+
+BASH:
+cat: command not found
+stdin:bad: command not found
+
+53
+==========files==========
+YOU:
+['0)', 't', 'Mac']
+BASH:
+['t', 'Mac']
+==========cat_files==========
+YOU:
+[]['❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m\n', "minishell: syntax error near unexpected token `newline'\n", "minishell: syntax error near unexpected token `newline'\n"][]
+BASH:
+[][]
 
 ****************************************
 command in emptydir:
@@ -414,16 +1678,228 @@ cat < main.c < main2.c >> t -> Mac unnecessary error message; stdin:bad file des
 ****************************************
 ==========output==========
 YOU:
-t: Is a directory
-stdin:bad: command not found
-
-48
+None0
 
 BASH:
 main.c: No such file or directory
 stdin:bad: command not found
 
 64
+
+****************************************
+command in NOT emptydir:
+cat >> t < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+#include: command not found
+int: command not found
+{: command not found
+char: command not found
+int: command not found
+int: command not found
+int: command not found
+fd: command not found
+fd1: command not found
+fd: command not found
+if: command not found
+{: command not found
+if: command not found
+cat.out: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+}: command not found
+if: command not found
+{: command not found
+while((ret: command not found
+{: command not found
+printf(%d | %s\n,: command not found
+free(line): command not found
+}: command not found
+printf(%d | %s\n,: command not found
+free(line): command not found
+}: command not found
+if: command not found
+{: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+}: command not found
+if: command not found
+system(leaks a.out): command not found
+close(fd): command not found
+close(fd1): command not found
+return: command not found
+}: command not found
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m❌ ~ [1;31mminishell > [0m❌ ~ [1;31mminishell > [0m❌ ~ [1;31mminishell > [0m1619
+
+BASH:
+cat: command not found
+
+24
+==========files==========
+YOU:
+['0)', 't']
+BASH:
+['t']
+==========cat_files==========
+YOU:
+[][]
+BASH:
+[]
+
+****************************************
+command in emptydir:
+cat >> t < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+None0
+
+BASH:
+t: Is a directory
+
+19
+
+****************************************
+command in NOT emptydir:
+cat > t.txt > t < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+#include: command not found
+int: command not found
+{: command not found
+char: command not found
+int: command not found
+int: command not found
+int: command not found
+fd: command not found
+fd1: command not found
+fd: command not found
+if: command not found
+{: command not found
+if: command not found
+cat.out: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+if: command not found
+fd: command not found
+}: command not found
+if: command not found
+{: command not found
+while((ret: command not found
+{: command not found
+printf(%d | %s\n,: command not found
+free(line): command not found
+}: command not found
+printf(%d | %s\n,: command not found
+free(line): command not found
+}: command not found
+if: command not found
+{: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd1,: command not found
+printf(%s\n,: command not found
+get_next_line(fd,: command not found
+printf(%s\n,: command not found
+}: command not found
+if: command not found
+system(leaks a.out): command not found
+close(fd): command not found
+close(fd1): command not found
+return: command not found
+}: command not found
+
+ ~ [1;32mminishell > [01510
+
+BASH:
+cat: command not found
+
+24
+==========files==========
+YOU:
+['0)', 't', 't.txt']
+BASH:
+['t', 't.txt']
+==========cat_files==========
+YOU:
+[][]['❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m🇧🇪  ~ \x1b[1;32mminishell > \x1b[0m❌ ~ \x1b[1;31mminishell > \x1b[0m\n', "minishell: syntax error near unexpected token `newline'\n", "minishell: syntax error near unexpected token `newline'\n"]
+BASH:
+[][]
+
+****************************************
+command in emptydir:
+cat > t.txt > t < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+None0
+
+BASH:
+t: Is a directory
+
+19
+
+****************************************
+command in NOT emptydir:
+cat < main.c > s > l| pwd -> Mac unnecessary error message; stdin:bad file descriptor
+****************************************
+==========output==========
+YOU:
+minishell: pwd: - : invalid option
+pwd
+not found
+command not found
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m121
+
+BASH:
+cat: command not found
+stdin:bad: command not found
+
+53
+==========files==========
+YOU:
+['s', 'Mac', 'l']
+BASH:
+['s', 'Mac', 'l']
+==========cat_files==========
+YOU:
+[][][]
+BASH:
+[]['/Users/arthurtainmont/goinfre/minishell_unittest/test/test\n'][]
 
 ****************************************
 command in emptydir:
@@ -432,9 +1908,11 @@ cat < main.c > s > l| pwd -> Mac unnecessary error message; stdin:bad file descr
 ==========output==========
 YOU:
 main.c: No such file or directory
-stdin:bad: command not found
+pwd: - : invalid option
+pwd
+command not found
 
-64
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m134
 
 BASH:
 main.c: No such file or directory
@@ -443,14 +1921,31 @@ stdin:bad: command not found
 64
 ==========files==========
 YOU:
-['s', 'Mac', 'l']
+['Mac']
 BASH:
 ['Mac']
 ==========cat_files==========
 YOU:
-[]['/Users/arthurtainmont/goinfre/minishell_unittest/test/empty\n'][]
+[]
 BASH:
 ['/Users/arthurtainmont/goinfre/minishell_unittest/test/empty\n']
+
+****************************************
+command in NOT emptydir:
+cat < main.c > t | pwd | ./a.out2 -> Mac unnecessary error message; stdin:bad file descriptor
+****************************************
+==========output==========
+YOU:
+cat: command not found
+stdin:bad: command not found
+
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m106
+
+BASH:
+cat: command not found
+stdin:bad: command not found
+
+53
 
 ****************************************
 command in emptydir:
@@ -458,11 +1953,11 @@ cat < main.c > t | pwd | ./a.out2 -> Mac unnecessary error message; stdin:bad fi
 ****************************************
 ==========output==========
 YOU:
-t: Is a directory
+main.c: No such file or directory
 ./a.out2: No such file or directory
 stdin:bad: command not found
 
-84
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m153
 
 BASH:
 main.c: No such file or directory
@@ -478,10 +1973,9 @@ cat > t.txt < main.c | cat
 ==========output==========
 YOU:
 cat: command not found
-sleep: command not found
 cat: command not found
 
-72
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m100
 
 BASH:
 cat: command not found
@@ -496,10 +1990,9 @@ cat > t.txt < main.c | cat
 ==========output==========
 YOU:
 main.c: No such file or directory
-sleep: command not found
 cat: command not found
 
-83
+ ~ [1;32mminishell > [0m❌ ~ [1;31mminishell > [0m111
 
 BASH:
 main.c: No such file or directory
@@ -509,27 +2002,31 @@ cat: command not found
 
 ****************************************
 command in NOT emptydir:
+echo ">"
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [0m>
+29
+
+BASH:
+
+>
+3
+
+****************************************
+command in NOT emptydir:
 echo ">" > text
 ****************************************
 ==========output==========
 YOU:
 
-> > text
-10
+ ~ [1;32mminishell > [0m27
 
 BASH:
 
 1
-==========files==========
-YOU:
-None
-BASH:
-['text']
-==========cat_files==========
-YOU:
-
-BASH:
-['>\n']
 
 ****************************************
 command in NOT emptydir:
@@ -538,22 +2035,11 @@ echo ">" hello > text
 ==========output==========
 YOU:
 
-> hello > text
-16
+ ~ [1;32mminishell > [0m27
 
 BASH:
 
 1
-==========files==========
-YOU:
-None
-BASH:
-['text']
-==========cat_files==========
-YOU:
-
-BASH:
-['> hello\n']
 
 ****************************************
 command in NOT emptydir:
@@ -562,23 +2048,101 @@ echo "> hello>" > text
 ==========output==========
 YOU:
 
-> hello> > text
-
-18
+ ~ [1;32mminishell > [0m27
 
 BASH:
 
 1
-==========files==========
-YOU:
-None
-BASH:
-['text']
-==========cat_files==========
+
+****************************************
+command in NOT emptydir:
+echo "\$USER"
+****************************************
+==========output==========
 YOU:
 
+ ~ [1;32mminishell > [0m$USER
+33
+
 BASH:
-['> hello>\n']
+
+$USER
+7
+
+****************************************
+command in NOT emptydir:
+echo echo '\;'
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [0mecho \;
+35
+
+BASH:
+
+echo \;
+9
+
+****************************************
+command in NOT emptydir:
+echo echo "\;"
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [0mecho \;
+35
+
+BASH:
+
+echo \;
+9
+
+****************************************
+command in NOT emptydir:
+echo ';'
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [0m;
+29
+
+BASH:
+
+;
+3
+
+****************************************
+command in NOT emptydir:
+echo $USER
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [0marthurtainmont
+42
+
+BASH:
+
+arthurtainmont
+16
+
+****************************************
+command in NOT emptydir:
+echo "$USER"
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [0marthurtainmont
+42
+
+BASH:
+
+arthurtainmont
+16
 
 ****************************************
 command in NOT emptydir:
@@ -587,7 +2151,7 @@ echo '$USER' -> Unittest bugs but correct
 ==========output==========
 YOU:
 
-1
+ ~ [1;32mminishell > [0m27
 
 BASH:
 
@@ -599,9 +2163,37 @@ BASH:
 ['Unittest']
 ==========cat_files==========
 YOU:
-['arthurtainmont -bugs but correct\n']
+['arthurtainmont - bugs but correct\n']
 BASH:
 ['$USER - bugs but correct\n']
+
+****************************************
+command in NOT emptydir:
+echo "ok    man"
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [0mok    man
+37
+
+BASH:
+
+ok    man
+11
+
+****************************************
+command in NOT emptydir:
+echo "yes" > "f"
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [0m27
+
+BASH:
+
+1
 
 ****************************************
 command in NOT emptydir:
@@ -610,10 +2202,70 @@ echo \\$?
 ==========output==========
 YOU:
 
-$?
-4
+ ~ [1;32mminishell > [0m$?
+30
 
 BASH:
 
 \0
+4
+
+****************************************
+command in NOT emptydir:
+echo \$?
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [0m$?
+30
+
+BASH:
+
+$?
+4
+
+****************************************
+command in NOT emptydir:
+echo $?
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [0m0
+29
+
+BASH:
+
+0
+3
+
+****************************************
+command in NOT emptydir:
+echo "$?"
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [0m0
+29
+
+BASH:
+
+0
+3
+
+****************************************
+command in NOT emptydir:
+echo "ok"
+****************************************
+==========output==========
+YOU:
+
+ ~ [1;32mminishell > [0mok
+30
+
+BASH:
+
+ok
 4
