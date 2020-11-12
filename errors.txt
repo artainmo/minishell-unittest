@@ -30,8 +30,8 @@ YOU:
 n: No such file or directory
 y: No such file or directory
 sleep: command not found
-./a.out2: No such file or directory
 cat: command not found
+./a.out2: No such file or directory
 ./a.out2: No such file or directory
 
 179

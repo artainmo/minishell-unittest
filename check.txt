@@ -468,8 +468,8 @@ pwd | pwd | cat main.c | ./a.out2
 ****************************************
 ==========output==========
 YOU:
-cat: command not found
 ./a.out2: No such file or directory
+cat: command not found
 
 
 BASH:
