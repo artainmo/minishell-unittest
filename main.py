@@ -83,6 +83,9 @@ if __name__ == "__main__":
     if os.path.isfile("test/test/a.out") == 0 or os.path.isfile("test/test/a.out2") == 0:
         print("ERROR: use make env to create test files")
         quit();
+    if os.path.isfile(minishell_pwd) == 0:
+        print("ERROR: minishell path is incorrect, make sure to include minishell executable and use relative path in top main.py")
+        quit();
     print(colored("\nDIRECTORY".ljust(15) + "TEST".ljust(65) + "RESULT", "yellow"))
     with open("test/tests.txt", "r") as fd_tests, open("errors.txt", "a+") as fd_result, open("check.txt", "a+") as fd_check:
         tests = fd_tests.readlines()
