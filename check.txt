@@ -1,0 +1,956 @@
+
+****************************************
+command in NOT emptydir:
+echoq coucou > oui > echo text > fichier
+****************************************
+==========output==========
+YOU:
+echoq: command not found
+
+
+BASH:
+echoq: command not found
+
+
+****************************************
+command in NOT emptydir:
+echo coucou > oui > echo text > fichier
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+
+****************************************
+command in NOT emptydir:
+echo coucou > oui > echoq text > fichier
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+
+****************************************
+command in NOT emptydir:
+cat main.c > echo main2.c main3.c > fichier
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in emptydir:
+cat main.c > echo main2.c main3.c > fichier
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in NOT emptydir:
+cat main.c > echo main2.c > fichier main3.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in emptydir:
+cat main.c > echo main2.c > fichier main3.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in NOT emptydir:
+pwd > t > t
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+
+****************************************
+command in emptydir:
+pwd > t > t
+****************************************
+==========output==========
+YOU:
+t: Is a directory
+
+
+BASH:
+t: Is a directory
+
+
+****************************************
+command in NOT emptydir:
+echo coucou >> oui
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+
+****************************************
+command in NOT emptydir:
+echo coucou >> oui >> echo text >> fichier
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+
+****************************************
+command in NOT emptydir:
+pwd >> pwd >> f
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+
+****************************************
+command in NOT emptydir:
+echo coucou >> pwd >> f
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+
+****************************************
+command in NOT emptydir:
+echo coucou >> cat main.c >> f
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+
+****************************************
+command in emptydir:
+echo coucou >> cat main.c >> f
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+
+****************************************
+command in NOT emptydir:
+cat main.c >> echo coucou >> f
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in emptydir:
+cat main.c >> echo coucou >> f
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in NOT emptydir:
+cat main.c >> pwd main2.c >> f
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in emptydir:
+cat main.c >> pwd main2.c >> f
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in NOT emptydir:
+cat main.c >> cat main.c >> f
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in emptydir:
+cat main.c >> cat main.c >> f
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in NOT emptydir:
+./a.out.out 0 < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+./a.out.out: No such file or directory
+
+
+BASH:
+./a.out.out: No such file or directory
+
+
+****************************************
+command in emptydir:
+./a.out.out 0 < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+main.c: No such file or directory
+
+
+BASH:
+main.c: No such file or directory
+
+
+****************************************
+command in NOT emptydir:
+cat 0 < dwdw < main2.c
+****************************************
+==========output==========
+YOU:
+dwdw: No such file or directory
+
+
+BASH:
+dwdw: No such file or directory
+
+
+****************************************
+command in emptydir:
+cat 0 < dwdw < main2.c
+****************************************
+==========output==========
+YOU:
+dwdw: No such file or directory
+
+
+BASH:
+dwdw: No such file or directory
+
+
+****************************************
+command in NOT emptydir:
+wwdd < text.txt < main2.c
+****************************************
+==========output==========
+YOU:
+text.txt: No such file or directory
+
+
+BASH:
+text.txt: No such file or directory
+
+
+****************************************
+command in emptydir:
+wwdd < text.txt < main2.c
+****************************************
+==========output==========
+YOU:
+text.txt: No such file or directory
+
+
+BASH:
+text.txt: No such file or directory
+
+
+****************************************
+command in NOT emptydir:
+./a.out2 | echo non < no | echo oui < yes
+****************************************
+==========output==========
+YOU:
+no: No such file or directory
+yes: No such file or directory
+
+
+BASH:
+no: No such file or directory
+yes: No such file or directory
+
+
+****************************************
+command in emptydir:
+./a.out2 | echo non < no | echo oui < yes
+****************************************
+==========output==========
+YOU:
+no: No such file or directory
+yes: No such file or directory
+./a.out2: No such file or directory
+
+
+BASH:
+./a.out2: No such file or directory
+no: No such file or directory
+yes: No such file or directory
+
+
+****************************************
+command in NOT emptydir:
+./a.out2 | echo non > no | echo oui > yes
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+
+****************************************
+command in emptydir:
+./a.out2 | echo non > no | echo oui > yes
+****************************************
+==========output==========
+YOU:
+./a.out2: No such file or directory
+
+
+BASH:
+./a.out2: No such file or directory
+
+
+****************************************
+command in NOT emptydir:
+base64 /dev/urandom | head -c 1000
+****************************************
+==========output==========
+YOU:
+base64: command not found
+head: command not found
+
+
+BASH:
+base64: command not found
+head: command not found
+
+
+****************************************
+command in NOT emptydir:
+cat main.c | ./a.out2
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****This program has been executed successfully****
+
+****************************************
+command in emptydir:
+cat main.c | ./a.out2
+****************************************
+==========output==========
+YOU:
+./a.out2: No such file or directory
+cat: command not found
+
+
+BASH:
+cat: command not found
+./a.out2: No such file or directory
+
+
+****************************************
+command in NOT emptydir:
+date | pwd
+****************************************
+==========output==========
+YOU:
+date: command not found
+
+
+BASH:
+date: command not found
+
+/Users/arthurtainmont/goinfre/minishell_unittest/test/test
+
+****************************************
+command in NOT emptydir:
+pwd | pwd | cat main.c | ./a.out2
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****This program has been executed successfully****
+
+****************************************
+command in emptydir:
+pwd | pwd | cat main.c | ./a.out2
+****************************************
+==========output==========
+YOU:
+cat: command not found
+./a.out2: No such file or directory
+
+
+BASH:
+cat: command not found
+./a.out2: No such file or directory
+
+
+****************************************
+command in NOT emptydir:
+pwd | pwd | cat | cat main.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+cat: command not found
+
+
+BASH:
+cat: command not found
+cat: command not found
+
+
+****************************************
+command in emptydir:
+pwd | pwd | cat | cat main.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+cat: command not found
+
+
+BASH:
+cat: command not found
+cat: command not found
+
+
+****************************************
+command in NOT emptydir:
+pwd | pwd | cat | cat
+****************************************
+==========output==========
+YOU:
+cat: command not found
+cat: command not found
+
+
+BASH:
+cat: command not found
+cat: command not found
+
+
+****************************************
+command in NOT emptydir:
+./a.out1 | dwdw | pwd | echo
+****************************************
+==========output==========
+YOU:
+./a.out1: No such file or directory
+dwdw: command not found
+
+
+BASH:
+./a.out1: No such file or directory
+dwdw: command not found
+
+
+
+****************************************
+command in emptydir:
+./a.out1 | dwdw | pwd | echo
+****************************************
+==========output==========
+YOU:
+./a.out1: No such file or directory
+dwdw: command not found
+
+
+BASH:
+./a.out1: No such file or directory
+dwdw: command not found
+
+
+
+****************************************
+command in NOT emptydir:
+echo j | grep c >cat | grep c > lol lol
+****************************************
+==========output==========
+YOU:
+grep: command not found
+grep: command not found
+
+
+BASH:
+grep: command not found
+grep: command not found
+
+
+****************************************
+command in NOT emptydir:
+echo lol |exit
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+
+****************************************
+command in NOT emptydir:
+hexdump < main.c > s
+****************************************
+==========output==========
+YOU:
+hexdump: command not found
+
+
+BASH:
+hexdump: command not found
+
+
+****************************************
+command in NOT emptydir:
+cat > t.txt < main.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in emptydir:
+cat > t.txt < main.c
+****************************************
+==========output==========
+YOU:
+main.c: No such file or directory
+
+
+BASH:
+main.c: No such file or directory
+
+
+****************************************
+command in NOT emptydir:
+ddw > t.txt < main.c
+****************************************
+==========output==========
+YOU:
+ddw: command not found
+
+
+BASH:
+ddw: command not found
+
+
+****************************************
+command in emptydir:
+ddw > t.txt < main.c
+****************************************
+==========output==========
+YOU:
+main.c: No such file or directory
+
+
+BASH:
+main.c: No such file or directory
+
+
+****************************************
+command in NOT emptydir:
+cat > t.txt > t < main.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in emptydir:
+cat > t.txt > t < main.c
+****************************************
+==========output==========
+YOU:
+t: Is a directory
+
+
+BASH:
+t: Is a directory
+
+
+****************************************
+command in NOT emptydir:
+cat > t.txt < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in emptydir:
+cat > t.txt < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+main.c: No such file or directory
+
+
+BASH:
+main.c: No such file or directory
+
+
+****************************************
+command in NOT emptydir:
+cat < main.c > t > t.txt
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in NOT emptydir:
+cat < main.c < main2.c > t
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in NOT emptydir:
+cat < main.c < main2.c >> t
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in NOT emptydir:
+cat >> t < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in emptydir:
+cat >> t < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+t: Is a directory
+
+
+BASH:
+t: Is a directory
+
+
+****************************************
+command in NOT emptydir:
+cat > t.txt > t < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+cat: command not found
+
+
+BASH:
+cat: command not found
+
+
+****************************************
+command in emptydir:
+cat > t.txt > t < main.c < main2.c
+****************************************
+==========output==========
+YOU:
+t: Is a directory
+
+
+BASH:
+t: Is a directory
+
+
+****************************************
+command in NOT emptydir:
+echo ">"
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+>
+
+****************************************
+command in NOT emptydir:
+echo "\$USER"
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+$USER
+
+****************************************
+command in NOT emptydir:
+echo echo '\;'
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+echo \;
+
+****************************************
+command in NOT emptydir:
+echo echo "\;"
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+echo \;
+
+****************************************
+command in NOT emptydir:
+echo ';'
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+;
+
+****************************************
+command in NOT emptydir:
+echo $USER
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+arthurtainmont
+
+****************************************
+command in NOT emptydir:
+echo "$USER"
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+arthurtainmont
+
+****************************************
+command in NOT emptydir:
+echo "ok    man"
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+ok    man
+
+****************************************
+command in NOT emptydir:
+echo "yes" > "f"
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+
+****************************************
+command in NOT emptydir:
+echo \\$?
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+\0
+
+****************************************
+command in NOT emptydir:
+echo \$?
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+$?
+
+****************************************
+command in NOT emptydir:
+echo $?
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+0
+
+****************************************
+command in NOT emptydir:
+echo "$?"
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+0
+
+****************************************
+command in NOT emptydir:
+echo "ok"
+****************************************
+==========output==========
+YOU:
+
+
+BASH:
+
+ok

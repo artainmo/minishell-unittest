@@ -35,18 +35,18 @@ pwd | pwd | cat | cat
 echo j | grep c >cat | grep c > lol lol
 echo lol |exit
 hexdump < main.c > s
-ede < main.c > s > l| pwd -> We create s and l fils while bash doesn't
+ede < main.c > s > l| pwd
 cat > t.txt < main.c
 ddw > t.txt < main.c
 cat > t.txt > t < main.c
 cat > t.txt < main.c < main2.c
-cat < main.c > t > t.txt -> Mac unnecessary error message; stdin:bad file descriptor
-cat < main.c < main2.c > t -> Mac unnecessary error message; stdin:bad file descriptor
-cat < main.c < main2.c >> t -> Mac unnecessary error message; stdin:bad file descriptor
+cat < main.c > t > t.txt
+cat < main.c < main2.c > t
+cat < main.c < main2.c >> t
 cat >> t < main.c < main2.c
 cat > t.txt > t < main.c < main2.c
-cat < main.c > s > l| pwd -> Mac unnecessary error message; stdin:bad file descriptor
-cat < main.c > t | pwd | ./a.out2 -> Mac unnecessary error message; stdin:bad file descriptor
+cat < main.c > s > l| pwd
+cat < main.c > t | pwd | ./a.out2
 cat > t.txt < main.c | cat
 echo ">"
 echo ">" > text
@@ -58,7 +58,6 @@ echo echo "\;"
 echo ';'
 echo $USER
 echo "$USER"
-echo '$USER' -> Unittest bugs but correct
 echo "ok    man"
 echo "yes" > "f"
 echo \\$?

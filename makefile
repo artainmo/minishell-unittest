@@ -28,4 +28,7 @@ programs:
 	@gcc test/test/main2.c -o test/test/a.out2
 	@pip3 install colorterm
 
+prompt:
+	@python3 get_prompt.py
+
 re: fclean programs run

@@ -10,9 +10,11 @@ Prerequisites:
 
 Usage:
   First execute make env to create adequate environment.
-  Open main.py and add in str format the absolute directory to your minishell program
-  execute with make.
+  Open main.py and add in str format the absolute directory to your minishell program.
+  Use make prompt to see the prompt we will use and copy paste your prompt in top main.py minishell_prompt variable.
+  
   You can look at your error log in errors.txt, use check.txt to look at correct answer outputs.
+
 
 Errors:
   Does not support and cannot test multiline.

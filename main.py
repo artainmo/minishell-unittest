@@ -4,16 +4,18 @@ import subprocess
 from utils.test_difference import *
 from utils.show_result import *
 
-minishell_pwd = "/Users/arthurtainmont/goinfre/minishell/minishell"
+minishell_path = "/Users/arthurtainmont/goinfre/my/minishell/minishell"
 #minishell path towards your minishell executable
+minishell_prompt = "arthurtainmont@test$ "
+#Your minishell prompt, must end with space
 
-def parse_minishell(output):
+def parse_minishell(output): #Because of used unicode characters creates bugs and need to parse like this
     i = 0
     l = 0
-    while i < len(output) and output[i - 1] != ' ':
+    while i < len(output) and output[i - 2] != minishell_prompt[-2]:
         i += 1
     prompt = output[0:i]
-    l = output.find(prompt, i)
+    l = output.find(prompt)
     output = output[i:l]
     return output
 
@@ -42,7 +44,7 @@ def test_minishell(shell_command):
     shell_command = shell_command[0:-1]
     shell_command = parse_quotes(shell_command)
     try:
-        output = subprocess.run(["echo " + shell_command + " | " + minishell_pwd], shell=True, capture_output=True, encoding="utf-8", executable="/bin/zsh", timeout=1)
+        output = subprocess.run(["echo " + shell_command + " | " + minishell_path], shell=True, capture_output=True, encoding="utf-8", executable="/bin/zsh", timeout=1)
     except:
         output = None
     if output != None:
@@ -72,8 +74,6 @@ def test_in_dir(test, dir, fd_result, fd_check):
     ret3 = check_created_files(files_m, files_b)
     show_result(dir, fd_result, fd_check, ret1, ret2, ret3, test, output_m, output_b, files_b, files_m, file_output_m, file_output_b)
 
-
-
 if __name__ == "__main__":
     try:
         os.remove("errors.txt")
@@ -83,9 +83,15 @@ if __name__ == "__main__":
     if os.path.isfile("test/test/a.out") == 0 or os.path.isfile("test/test/a.out2") == 0:
         print("ERROR: use make env to create test files")
         quit();
-    if os.path.isfile(minishell_pwd) == 0:
+    if os.path.isfile(minishell_path) == 0:
         print("ERROR: minishell path is incorrect, make sure to include minishell executable and use relative path in top main.py")
         quit();
+    if minishell_prompt[-1] != ' ':
+        print("ERROR: minishell prompt must end with space")
+        quit()
+    if minishell_prompt.find(minishell_prompt[-2], 0, -2) != -1:
+        print("ERROR: minishell prompt last character " + minishell_prompt[-2] + " cannot appear two times")
+        quit()
     print(colored("\nDIRECTORY".ljust(15) + "TEST".ljust(65) + "RESULT", "yellow"))
     with open("test/tests.txt", "r") as fd_tests, open("errors.txt", "a+") as fd_result, open("check.txt", "a+") as fd_check:
         tests = fd_tests.readlines()
