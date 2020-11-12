@@ -4,7 +4,7 @@ import subprocess
 from utils.test_difference import *
 from utils.show_result import *
 
-minishell_pwd = "/Users/arthurtainmont/Documents/s19/minis/minishell/minishell" 
+minishell_pwd = "/Users/arthurtainmont/goinfre/my/minishell/minishell"
 #minishell path towards your minishell executable
 
 def parse_minishell(output):
@@ -75,12 +75,15 @@ def test_in_dir(test, dir, fd_result, fd_check):
 
 
 if __name__ == "__main__":
-    print(colored("\nDIRECTORY".ljust(15) + "TEST".ljust(65) + "RESULT", "yellow"))
     try:
         os.remove("errors.txt")
         os.remove("check.txt")
     except:
         pass
+    if os.path.isfile("test/test/a.out") == 0 or os.path.isfile("test/test/a.out2") == 0:
+        print("ERROR: use make env to create test files")
+        quit();
+    print(colored("\nDIRECTORY".ljust(15) + "TEST".ljust(65) + "RESULT", "yellow"))
     with open("test/tests.txt", "r") as fd_tests, open("errors.txt", "a+") as fd_result, open("check.txt", "a+") as fd_check:
         tests = fd_tests.readlines()
         for test in tests:

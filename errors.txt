@@ -32,11 +32,11 @@ YOU:
 n: No such file or directory
 y: No such file or directory
 sleep: command not found
-./a.out2: No such file or directory
-cat: command not found
-./a.out2: No such file or directory
+./a.out2minishell: cat: command not found
+or directory
+No such file or directory
 
-179
+165
 
 BASH:
 ./a.out2: No such file or directory
@@ -137,13 +137,13 @@ command in NOT emptydir:
 YOU:
 sleep: command not found
 
-/Users/arthurtainmont/Documents/s19/mu/test/test
-75
+/Users/arthurtainmont/goinfre/minishell_unittest/test/test
+85
 
 BASH:
 
-/Users/arthurtainmont/Documents/s19/mu/test/test
-50
+/Users/arthurtainmont/goinfre/minishell_unittest/test/test
+60
 
 ****************************************
 command in emptydir:
@@ -154,14 +154,14 @@ YOU:
 sleep: command not found
 ./a.out2: No such file or directory
 
-/Users/arthurtainmont/Documents/s19/mu/test/empty
-112
+/Users/arthurtainmont/goinfre/minishell_unittest/test/empty
+122
 
 BASH:
 ./a.out2: No such file or directory
 
-/Users/arthurtainmont/Documents/s19/mu/test/empty
-87
+/Users/arthurtainmont/goinfre/minishell_unittest/test/empty
+97
 
 ****************************************
 command in NOT emptydir:
@@ -272,14 +272,14 @@ YOU:
 yes: No such file or directory
 sleep: command not found
 
-/Users/arthurtainmont/Documents/s19/mu/test/test
-106
+/Users/arthurtainmont/goinfre/minishell_unittest/test/test
+116
 
 BASH:
 yes: No such file or directory
 
-/Users/arthurtainmont/Documents/s19/mu/test/test
-81
+/Users/arthurtainmont/goinfre/minishell_unittest/test/test
+91
 
 ****************************************
 command in NOT emptydir:
@@ -448,9 +448,9 @@ BASH:
 ['Mac']
 ==========cat_files==========
 YOU:
-[]['/Users/arthurtainmont/Documents/s19/mu/test/empty\n'][]
+[]['/Users/arthurtainmont/goinfre/minishell_unittest/test/empty\n'][]
 BASH:
-['/Users/arthurtainmont/Documents/s19/mu/test/empty\n']
+['/Users/arthurtainmont/goinfre/minishell_unittest/test/empty\n']
 
 ****************************************
 command in emptydir:
@@ -502,8 +502,8 @@ cat: command not found
 83
 
 BASH:
-cat: command not found
 main.c: No such file or directory
+cat: command not found
 
 58
 

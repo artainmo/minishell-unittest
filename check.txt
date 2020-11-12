@@ -443,12 +443,12 @@ date | pwd
 YOU:
 date: command not found
 
-/Users/arthurtainmont/Documents/s19/mu/test/test
+/Users/arthurtainmont/goinfre/minishell_unittest/test/test
 
 BASH:
 date: command not found
 
-/Users/arthurtainmont/Documents/s19/mu/test/test
+/Users/arthurtainmont/goinfre/minishell_unittest/test/test
 
 ****************************************
 command in NOT emptydir:

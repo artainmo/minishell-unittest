@@ -1,6 +1,5 @@
 all: run
 env: programs
-re: fclean all
 
 PATH = /Users/arthurtainmont/Documents/s19/minishell/minishell/minishell
 
@@ -28,3 +27,5 @@ programs:
 	rm test/test/get_next_line.h.gch
 	gcc test/test/main2.c -o test/test/a.out2
 	pip3 install colorterm
+
+re: fclean programs run
