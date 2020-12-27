@@ -15,6 +15,7 @@
   make env
   ```
   Second:
+  
   Open main.py and add in str format the absolute directory to your minishell program.
   
   Third:
