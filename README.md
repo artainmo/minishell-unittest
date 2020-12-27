@@ -16,11 +16,13 @@
   ```
   Second:
   Open main.py and add in str format the absolute directory to your minishell program.
+  
   Third:
   ```
   make prompt
   ```
   Use make prompt to see the prompt we will use and copy paste your prompt in top main.py minishell_prompt variable.
+  
   Finally:
   ```
   make
