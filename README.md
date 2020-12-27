@@ -10,21 +10,21 @@
   To run this unit-test you need python3.7 and pip installed.
 
 ### Usage:
-  First:
+  * First:
   ```
   make env
   ```
-  Second:
+  * Second:
   
   Open main.py and add in str format the absolute directory to your minishell program.
   
-  Third:
+  * Third:
   ```
   make prompt
   ```
   Use make prompt to see the prompt we will use and copy paste your prompt in top main.py minishell_prompt variable.
   
-  Finally:
+  * Finally:
   ```
   make
   ```
