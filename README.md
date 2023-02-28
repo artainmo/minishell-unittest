@@ -36,4 +36,4 @@
   Does not support `;`.<br>
   Doesn't seem to support this command: `echo '$USER'`.<br>
   UnicodeDecodeError: Delete the test/test/get_next_line.h.gch .<br>
-  ./a.out: Exec format error -> make re or change computer.
+  ./a.out: Exec format error -> `make re` or change computer.
