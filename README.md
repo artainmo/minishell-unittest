@@ -1,4 +1,4 @@
-# minishell_unittest
+# minishell-unittest
 
 ### Info
  This is a unittest for [minishell](https://github.com/artainmo/minishell) primarily focused on tokens and parsing, you can add tests in the tests.txt file if you want to.<br>
