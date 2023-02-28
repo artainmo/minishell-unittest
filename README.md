@@ -32,8 +32,8 @@
 
 
 ### Errors:
-  Does not support and cannot test multiline.
-  Does not support ;.
-  Doesn't seem to support this commandi: echo '$USER'.
-  UnicodeDecodeError: Delete the test/test/get_next_line.h.gch .
+  Does not support and cannot test multiline.<br>
+  Does not support `;`.<br>
+  Doesn't seem to support this command: `echo '$USER'`.<br>
+  UnicodeDecodeError: Delete the test/test/get_next_line.h.gch .<br>
   ./a.out: Exec format error -> make re or change computer.
