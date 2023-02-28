@@ -1,9 +1,9 @@
 # minishell_unittest
 
 ### Info
- This is a unittest for minishell primarily focused on tokens and parsing, you can add tests in the tests.txt file if you want to.
- The program will compare your minishell and bach's terminal output, files you created and content inside those files.
- To isolate one case you can modify the test/test.txt file and modify tests.txt into test.txt inside main.py
+ This is a unittest for [minishell](https://github.com/artainmo/minishell) primarily focused on tokens and parsing, you can add tests in the tests.txt file if you want to.<br>
+ The program will compare your minishell and bach's terminal output, files you created and content inside those files.<br>
+ To isolate one case you can modify the test/test.txt file and modify tests.txt into test.txt inside main.py.<br>
  To put a test in comment or deactivate it use #.
 
 ### Prerequisites:
