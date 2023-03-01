@@ -4,7 +4,7 @@
  This is a unittest for [minishell](https://github.com/artainmo/minishell) primarily focused on tokens and parsing, you can add tests in the tests.txt file if you want to.<br>
  The program will compare your minishell and bach's terminal output, files you created and content inside those files.<br>
  To isolate one case you can modify the test/test.txt file and modify tests.txt into test.txt inside main.py.<br>
- To put a test in comment or deactivate it use #
+ To put a test in comment or deactivate it use #.
 
 ### Prerequisites:
   To run this unit-test you need python3.7 and pip installed.
